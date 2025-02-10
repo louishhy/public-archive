@@ -1,26 +1,26 @@
-/* Target the editor area specifically */
-.monaco-editor .overflow-guard::after {
+/* Target the editor area but exclude ipynb files and output/terminal panel */
+.monaco-editor:not([data-uri*='.ipynb']):not(.output-editor) .overflow-guard::after {
     content: '';
     position: absolute;
     bottom: 0;
     right: 0;
-    width: min(20vw, 400px);  /* Adjust size as needed */
-    height: min(40vh, 400px); /* Adjust size as needed */
+    width: min(20vw, 400px);
+    height: min(40vh, 400px);
     background-image: url('https://archive.moku.moe/moku_sd_1.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom right;
     pointer-events: none;
-    z-index: 100;        /* Places image behind text */
-    opacity: 0.20;      /* Very light watermark effect */
+    z-index: 100;
+    opacity: 0.20;
 }
 
-/* Optional: Add some padding to prevent text overlap */
-.monaco-editor .view-line {
+/* Optional: Add padding only for regular editor files */
+.monaco-editor:not([data-uri*='.ipynb']):not(.output-editor) .view-line {
     padding-right: 10px;
 }
 
-/* Ensure the image container doesn't affect scrolling */
+/* Keep the overflow guard positioning */
 .monaco-editor .overflow-guard {
     position: relative;
 }
