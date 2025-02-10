@@ -15,7 +15,7 @@
     opacity: 0.20;
 } */
 
-.part .editor {
+.part.editor {
     content: '';
     position: absolute;
     bottom: 0;
