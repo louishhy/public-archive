@@ -1,5 +1,5 @@
 /* Target the editor area but exclude ipynb files and output/terminal panel */
-.monaco-editor.focused:not([data-uri*='.ipynb']) .overflow-guard::after {
+.monaco-editor[role="code"]:not([data-uri*='.ipynb']) .overflow-guard::after {
     content: '';
     position: absolute;
     bottom: 0;
