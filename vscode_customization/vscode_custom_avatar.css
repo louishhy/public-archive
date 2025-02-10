@@ -1,5 +1,5 @@
 /* Target the editor area but exclude ipynb files and output/terminal panel */
-.monaco-editor:not([data-uri*='.ipynb']):not(.output-editor) .overflow-guard::after {
+.monaco-editor:not([data-uri*='.ipynb']):not(#workbench\.panel\.output) .overflow-guard::after {
     content: '';
     position: absolute;
     bottom: 0;
