@@ -15,6 +15,14 @@
     opacity: 0.20;
 }
 
+/* Hide the avatar on smaller screens */
+@media (max-height: 500px) {  /* Change 500px to your desired threshold */
+    .monaco-editor:not([data-uri*='.ipynb']):not(#workbench\.panel\.output) .overflow-guard::after {
+        display: none;
+    }
+}
+
+
 /* Optional: Add padding only for regular editor files */
 .monaco-editor:not([data-uri*='.ipynb']):not(.output-editor) .view-line {
     padding-right: 10px;
